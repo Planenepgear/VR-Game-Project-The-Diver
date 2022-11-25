@@ -14,7 +14,7 @@ public class CharacterAnimationSwitch : MonoBehaviour
     void Start()
     {
         animator = this.GetComponent<Animator>();
-        this.transform.position = new Vector3(transform.position.x, HeadPos.position.y - 1.1f, transform.position.z);
+        this.transform.position = new Vector3(transform.position.x, HeadPos.position.y - 2f, transform.position.z);
     }
 
     public void FirstPerson(bool isFirstPerson)
