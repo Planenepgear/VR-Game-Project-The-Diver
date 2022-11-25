@@ -126,6 +126,7 @@ public class FlyCameraLookat : MonoBehaviour
                 var rot = characterModle.transform.rotation;
                 characterCamera.parent.parent.rotation = playerCamera.parent.parent.rotation;
                 characterModle.transform.rotation = rot;
+                characterModle.SendMessage("FirstPerson", false);
 
                 isExchanging0 = true;
                 isExchanging1 = false;
@@ -183,6 +184,8 @@ public class FlyCameraLookat : MonoBehaviour
                 characterCamera.parent.parent.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
                 chapterLeftHand.SetActive(true);
                 chapterRightHand.SetActive(true);
+
+                characterModle.SendMessage("FirstPerson", true);
             }
 
             isWeekUp = true;
