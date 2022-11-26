@@ -7,7 +7,11 @@ public class SwimmingController : MonoBehaviour
 {
     public GameObject XROrigin;
     public Transform HeadPos;
-    public float SpeedDecay = 0.25f;
+
+    //public float SpeedDecay = 0.25f;
+    public float SpeedDecayMove = 0.25f;
+    public float SpeedDecayRotation = 0.25f;
+
     public InputDeviceCharacteristics controllerCharacteristics;
     private InputDevice targetDevice;
 
@@ -71,15 +75,18 @@ public class SwimmingController : MonoBehaviour
 
                 if (gripButtonPressed && Mathf.Abs(controllerVelocity.x) > Mathf.Abs(controllerVelocity.y))
                 {
-                    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 0.6f, 0));
+                    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 0.8f, 0));
                 }
                 else if (controllerVelocity.z < 0 && !gripButtonPressed)
                 {
-                    rb.AddForce(HeadPos.forward * -controllerVelocity.z * 1.25f);
+                    if (Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.x) && Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.y))
+                    {
+                        rb.AddForce(HeadPos.forward * (-controllerVelocity.z + Mathf.Abs(controllerVelocity.x) * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.7f);
+                    }
                 }
                 else if(gripButtonPressed && Mathf.Abs(controllerVelocity.x) < Mathf.Abs(controllerVelocity.y))
                 {
-                    rb.AddForce(this.transform.up * -controllerVelocity.y);
+                    rb.AddForce(this.transform.parent.parent.up * -controllerVelocity.y * 0.7f);
                 }
 
                 //if(controllerRotation.eulerAngles.y > 90f && controllerRotation.eulerAngles.y <= 120f && controllerVelocity.x < 0)
@@ -96,12 +103,12 @@ public class SwimmingController : MonoBehaviour
 
             if (rb.velocity.sqrMagnitude > 0)
             {
-                rb.AddForce(-rb.velocity * SpeedDecay);
+                rb.AddForce(-rb.velocity * SpeedDecayMove);
             }
 
             if(rb.angularVelocity.sqrMagnitude > 0)
             {
-                rb.AddTorque(-rb.angularVelocity * SpeedDecay);
+                rb.AddTorque(-rb.angularVelocity * SpeedDecayRotation);
             }
         }
     }
