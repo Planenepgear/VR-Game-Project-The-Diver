@@ -7,6 +7,7 @@ public class SwimmingController : MonoBehaviour
 {
     public GameObject XROrigin;
     public Transform HeadPos;
+    public Transform characterModle;
 
     //public float SpeedDecay = 0.25f;
     public float SpeedDecayMove = 0.25f;
@@ -19,7 +20,7 @@ public class SwimmingController : MonoBehaviour
     //static float t = 0.0f;
 
     public Vector3 controllerVelocity;
-    public Quaternion controllerRotation;
+    //public Quaternion controllerRotation;
     UnityEngine.XR.HapticCapabilities capabilities;
 
     //[SerializeField] float hapticAmplitude = 1f;
@@ -61,11 +62,11 @@ public class SwimmingController : MonoBehaviour
         {
             targetDevice.TryGetFeatureValue(CommonUsages.gripButton, out bool gripButtonPressed);
             targetDevice.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 deviceVelocityValue);
-            targetDevice.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotationValue);
+            //targetDevice.TryGetFeatureValue(CommonUsages.deviceRotation, out Quaternion deviceRotationValue);
             targetDevice.TryGetHapticCapabilities(out capabilities);
 
-            controllerVelocity = deviceVelocityValue;
-            controllerRotation = deviceRotationValue;
+            //controllerVelocity = deviceVelocityValue;
+            controllerVelocity = Quaternion.AngleAxis(XROrigin.transform.rotation.eulerAngles.y - characterModle.transform.rotation.eulerAngles.y, Vector3.up) * deviceVelocityValue;
 
             var speed = controllerVelocity.sqrMagnitude;
 
