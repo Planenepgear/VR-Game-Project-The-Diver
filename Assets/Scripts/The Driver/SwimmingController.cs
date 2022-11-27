@@ -76,7 +76,7 @@ public class SwimmingController : MonoBehaviour
 
                 if (gripButtonPressed && Mathf.Abs(controllerVelocity.x) > Mathf.Abs(controllerVelocity.y))
                 {
-                    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 0.8f, 0));
+                    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 0.5f, 0));
                 }
                 else if (controllerVelocity.z < 0 && !gripButtonPressed)
                 {
@@ -87,7 +87,7 @@ public class SwimmingController : MonoBehaviour
                 }
                 else if(gripButtonPressed && Mathf.Abs(controllerVelocity.x) < Mathf.Abs(controllerVelocity.y))
                 {
-                    rb.AddForce(this.transform.parent.parent.up * -controllerVelocity.y * 0.7f);
+                    rb.AddForce(this.transform.parent.parent.up * -controllerVelocity.y * 0.5f);
                 }
 
                 //if(controllerRotation.eulerAngles.y > 90f && controllerRotation.eulerAngles.y <= 120f && controllerVelocity.x < 0)

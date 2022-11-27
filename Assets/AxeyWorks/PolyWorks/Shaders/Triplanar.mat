@@ -62,6 +62,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - Vector1_312A3451: 0
@@ -75,6 +87,8 @@ Material:
     - _FlipZFaces: 0
     - _FrontTexTile: 1
     - _ObjectBased: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _RearFacesEnabled: 1
     - _SideTexTile: 1
     - _TopTexTile: 1
@@ -82,6 +96,7 @@ Material:
     - _UseNormalSide: 0
     - _UseNormalTop: 0
     m_Colors:
+    - _BaseColor: {r: 0.33490568, g: 0.9213243, b: 1, a: 0}
     - _FrontColour: {r: 0.33490568, g: 0.9213243, b: 1, a: 0}
     - _SideColour: {r: 1, g: 0.20283017, b: 0.20824876, a: 0}
     - _TopColour: {r: 0.706524, g: 1, b: 0.43867916, a: 0}

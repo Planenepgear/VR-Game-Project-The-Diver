@@ -92,6 +92,7 @@ public class SceneTranform : MonoBehaviour
 
     public void FirstPos()
     {
-        this.transform.position = playerCamera.position + new Vector3(0, -7 + characterModle.position.y, 10);
+        //this.transform.position = playerCamera.position + new Vector3(0, -7 + characterModle.position.y, 10);
+        this.transform.position = playerCamera.position + new Vector3(0, -10, 13);
     }
 }

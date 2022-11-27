@@ -113,7 +113,7 @@ public class FlyCameraLookat : MonoBehaviour
                 characterModle.transform.position = new Vector3(centerPosWorld.x, characterModle.transform.position.y + Yoffect, centerPosWorld.z);
 
                 moveSpeedSaver = characterCamera.parent.parent.GetComponent<ContinuousMoveProviderBase>().moveSpeed;
-                characterCamera.parent.parent.GetComponent<ContinuousMoveProviderBase>().moveSpeed = 0;
+                characterCamera.parent.parent.GetComponent<ContinuousMoveProviderBase>().moveSpeed *= 0.6f;
 
                 isWeekUp = false;
                 t = 0.0f;
