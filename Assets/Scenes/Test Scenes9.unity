@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 1042380088}
   - component: {fileID: 1042380089}
   - component: {fileID: 1042380090}
+  - component: {fileID: 1042380091}
   m_Layer: 7
   m_Name: XR Origin-Character
   m_TagString: Character
@@ -737,7 +738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31127140}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -10, y: 8, z: -7}
+  m_LocalPosition: {x: -10.000004, y: 8, z: -7.000002}
   m_LocalScale: {x: 1.5384613, y: 1.5384616, z: 1.5384613}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14118,6 +14119,24 @@ MonoBehaviour:
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   characterModle: {fileID: 3033359650444841332}
+--- !u!114 &1042380091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31127140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb9961e2b3ad3c44a583f528c0c97ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minX: -13.5
+  maxX: 13.5
+  minY: -1
+  maxY: 15.9
+  minZ: -13.5
+  maxZ: 13.5
 --- !u!114 &1045114969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35228,7 +35247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871194256174010660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.5, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35252,7 +35271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scene: {fileID: 1159395574}
-  Ydistance: 6.5
+  Ydistance: 7
 --- !u!4 &873788604660449240
 Transform:
   m_ObjectHideFlags: 0
@@ -35378,6 +35397,8 @@ GameObject:
   - component: {fileID: 992790944733480273}
   - component: {fileID: 992790944733480274}
   - component: {fileID: 992790944733480275}
+  - component: {fileID: 992790944733480281}
+  - component: {fileID: 992790944733480280}
   m_Layer: 0
   m_Name: Main Camera_Fly
   m_TagString: MainCamera
@@ -35549,7 +35570,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -35573,6 +35594,52 @@ Transform:
   m_Father: {fileID: 1189987712}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992790944733480280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992790944733480268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0c0a69611596146aceb2f60532940c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _version: 0
+  _mode: 0
+  _filterOceanData: 13
+  _meniscus: 1
+  _depthFogDensityFactor: 0.5
+  _volumeGeometry: {fileID: 0}
+  _invertCulling: 0
+  _enableShaderAPI: 0
+  _transparentObjectLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  _copyOceanMaterialParamsEachFrame: 1
+  _farPlaneMultiplier: 0.5
+  _debug:
+    _viewOceanMask: 0
+    _disableOceanMask: 0
+    _viewStencil: 0
+    _disableHeightAboveWaterOptimization: 0
+    _disableArtifactCorrection: 0
+--- !u!114 &992790944733480281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992790944733480268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c593ea1d4904804b05ef10faba0af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _version: 0
+  _weight: 1
+  _volumeProfile: {fileID: 0}
 --- !u!1 &1023432520209342642
 GameObject:
   m_ObjectHideFlags: 0
