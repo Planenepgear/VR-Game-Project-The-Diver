@@ -20,6 +20,7 @@ public class PosLock : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, minX, maxX), Mathf.Clamp(transform.localPosition.y, minY, maxY), Mathf.Clamp(transform.localPosition.z, minZ, maxZ));
+        transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, minX, maxX), 
+            Mathf.Clamp(transform.localPosition.y, minY, maxY), Mathf.Clamp(transform.localPosition.z, minZ, maxZ));
     }
 }

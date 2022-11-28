@@ -16,6 +16,7 @@ public class FlyCameraLookat : MonoBehaviour
     public GameObject characterModle;
     public GameObject chapterLeftHand;
     public GameObject chapterRightHand;
+    public GameObject chapterLegs;
 
     public GameObject globalVolume;
     public float weightChangeSpeed = 0.25f;
@@ -59,6 +60,7 @@ public class FlyCameraLookat : MonoBehaviour
 
         chapterLeftHand.SetActive(false);
         chapterRightHand.SetActive(false);
+        chapterLegs.SetActive(false);
 
         myVolume = globalVolume.GetComponent<Volume>();
         myVolume.weight = 1;
@@ -137,6 +139,7 @@ public class FlyCameraLookat : MonoBehaviour
                 flyCamera.SetParent(playerCamera.parent);
                 chapterLeftHand.SetActive(false);
                 chapterRightHand.SetActive(false);
+                chapterLegs.SetActive(false);
                 characterCamera.gameObject.SetActive(false);
 
                 characterCamera.parent.parent.GetComponent<ActionBasedContinuousMoveProvider>().forwardSource = locator;
@@ -184,6 +187,7 @@ public class FlyCameraLookat : MonoBehaviour
                 characterCamera.parent.parent.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
                 chapterLeftHand.SetActive(true);
                 chapterRightHand.SetActive(true);
+                chapterLegs.SetActive(true);
 
                 characterModle.SendMessage("FirstPerson", true);
             }
