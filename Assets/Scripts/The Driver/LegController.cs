@@ -12,13 +12,13 @@ public class LegController : MonoBehaviour
     public int jc_ind = 0;
 
     public float minGyro = 0.0f;
-    public float SpeedDecayMove = 0.25f;
-    public float maxSpeed = 5f;
+    //public float SpeedDecayMove = 0.25f;
+    public float maxSpeed = 3f;
+    public float standardHapticAmplitude = 0.3f;
 
     public GameObject XROrigin;
     public Transform HeadPos;
     public Transform characterModle;
-
 
     private Rigidbody rb;
 
@@ -44,11 +44,18 @@ public class LegController : MonoBehaviour
         {
             Joycon j = joycons[jc_ind];
 
-            if (j.GetAccel().sqrMagnitude > minGyro && rb.velocity.sqrMagnitude < maxSpeed)
+            if (j.GetAccel().sqrMagnitude > minGyro)
             {
                 gyro = j.GetGyro();
-                //rb.AddForce(HeadPos.forward * (Mathf.Abs(gyro.y) + Mathf.Abs(gyro.x) * 0.3f + Mathf.Abs(gyro.z) * 0.3f) * 0.7f);
-                rb.AddForce(HeadPos.forward * gyro.sqrMagnitude * 0.3f);
+
+                if(rb.velocity.sqrMagnitude < maxSpeed)
+                {
+                    //rb.AddForce(HeadPos.forward * (Mathf.Abs(gyro.y) + Mathf.Abs(gyro.x) * 0.3f + Mathf.Abs(gyro.z) * 0.3f) * 0.7f);
+                    rb.AddForce(HeadPos.forward * gyro.sqrMagnitude * 0.3f);
+                }
+
+                if(gyro.sqrMagnitude > 1f)
+                    j.SetRumble(100, 150, Mathf.Clamp(standardHapticAmplitude * gyro.sqrMagnitude * 0.5f, standardHapticAmplitude, standardHapticAmplitude + 0.3f), 300);
             }
             else
             {

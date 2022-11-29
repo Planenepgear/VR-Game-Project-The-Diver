@@ -21,10 +21,10 @@ public class SwimmingController : MonoBehaviour
 
     public Vector3 controllerVelocity;
     //public Quaternion controllerRotation;
-    UnityEngine.XR.HapticCapabilities capabilities;
 
-    //[SerializeField] float hapticAmplitude = 1f;
-    //[SerializeField] float hapticDuration = 0.1f;
+    UnityEngine.XR.HapticCapabilities capabilities;
+    [SerializeField] float standardHapticAmplitude = 0.1f;
+    [SerializeField] float hapticDuration = 0.2f;
 
     [SerializeField] float targetSpeed = 0.1f;
     //[SerializeField] float continueTime = 0.2f;
@@ -77,12 +77,14 @@ public class SwimmingController : MonoBehaviour
                 if (gripButtonPressed && Mathf.Abs(controllerVelocity.x) > Mathf.Abs(controllerVelocity.y))
                 {
                     rb.AddTorque(new Vector3(0, -controllerVelocity.x * 0.7f, 0));
+                    Haptic(speed + 0.5f);
                 }
                 else if (controllerVelocity.z < 0 && !gripButtonPressed)
                 {
                     if (Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.x) && Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.y))
                     {
                         rb.AddForce(HeadPos.forward * (-controllerVelocity.z + Mathf.Abs(controllerVelocity.x) * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.7f);
+                        Haptic(speed);
                     }
                 }
                 else if(Mathf.Abs(controllerVelocity.y) > 0 && !gripButtonPressed)
@@ -90,23 +92,15 @@ public class SwimmingController : MonoBehaviour
                     if(Mathf.Abs(controllerVelocity.y) > Mathf.Abs(controllerVelocity.z))
                     {
                         rb.AddForce(HeadPos.forward * (-controllerVelocity.z * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.5f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.8f);
+                        Haptic(speed);
                     }
                 }
                 else if(gripButtonPressed && Mathf.Abs(controllerVelocity.x) < Mathf.Abs(controllerVelocity.y))
                 {
                     rb.AddForce(this.transform.parent.parent.up * -controllerVelocity.y * 0.5f);
+                    Haptic(speed + 0.5f);
                 }
 
-                //if(controllerRotation.eulerAngles.y > 90f && controllerRotation.eulerAngles.y <= 120f && controllerVelocity.x < 0)
-                //{
-                //    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 2f, 0));
-                //}
-
-                //if (controllerRotation.eulerAngles.y > 270f && controllerRotation.eulerAngles.y <= 300f && controllerVelocity.x > 0)
-                //{
-                //    rb.AddTorque(new Vector3(0, -controllerVelocity.x * 2f, 0));
-                //}
-                //rb.AddTorque(new Vector3(0, -controllerVelocity.x, 0));
             }
 
             if (rb.velocity.sqrMagnitude > 0)
@@ -118,6 +112,18 @@ public class SwimmingController : MonoBehaviour
             {
                 rb.AddTorque(-rb.angularVelocity * SpeedDecayRotation);
             }
+
+            
+        }
+    }
+
+    public void Haptic(float speed)
+    {
+        if (speed >= 1.2f)
+        {
+            uint channel = 0;
+            targetDevice.SendHapticImpulse(channel, standardHapticAmplitude, hapticDuration);
+            //targetDevice.SendHapticImpulse(channel, Mathf.Clamp(standardHapticAmplitude * speed, standardHapticAmplitude, standardHapticAmplitude + 0.2f), hapticDuration);
         }
     }
 }
