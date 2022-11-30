@@ -5,9 +5,11 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
 
-    public float speedStand = 1f;
-    [HideInInspector] public float speed = 1f;
-    float rotationSpeed = 2.0f;
+    public float speedStand = 1.0f;
+    [HideInInspector] public float speed = 1.0f;
+    [SerializeField] float rotationSpeed = 2.0f;
+    [SerializeField] float groupSpeedMultiplier = 1.0f;
+
     Vector3 averageHeading;
     Vector3 averagePosition;
     float neighbourDistance = 5.0f;
@@ -81,7 +83,7 @@ public class Flock : MonoBehaviour
 
                     if (dist < 1.0f)
                     {
-                        vavoid = vavoid + (this.transform.position - go.transform.position);
+                        vavoid += this.transform.position - go.transform.position;
                     }
 
                     Flock anotherFlock = go.GetComponent<Flock>();
@@ -93,7 +95,7 @@ public class Flock : MonoBehaviour
         if (groupSize > 0)
         {
             vcentre = vcentre / groupSize + (goalPos - this.transform.position);
-            speed = gSpeed / groupSize;
+            speed = gSpeed / groupSize * groupSpeedMultiplier;
 
             Vector3 direction = (vcentre + vavoid) - transform.position;
             //if (direction != Vector3.zero)

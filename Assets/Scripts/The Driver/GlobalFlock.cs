@@ -6,6 +6,7 @@ public class GlobalFlock : MonoBehaviour
 {
 
     public GameObject fishPrefab;
+    //public Transform InstantiatePos;
     public int tankSize = 5; //这个参数很重要，控制鱼群范围
     public int numFish = 10; //控制鱼群数量
     [HideInInspector] public GameObject[] allFish;
@@ -20,7 +21,7 @@ public class GlobalFlock : MonoBehaviour
         for (int i = 0; i < numFish; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-tankSize, tankSize), //这个参数很重要，控制不同鱼群不同的初始位置
-                                      Random.Range(-tankSize, tankSize),
+                                      Random.Range(-tankSize * 3, tankSize * 3),
                                       Random.Range(-tankSize, tankSize)) + transform.position;
             allFish[i] = (GameObject)Instantiate(fishPrefab, pos, Quaternion.identity, transform);
         }
@@ -29,10 +30,10 @@ public class GlobalFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(0, 10000) < 50)
+        if (Random.Range(0, 10000) < 500)
         {
             goalPos = new Vector3(Random.Range(-tankSize, tankSize),
-                                 Random.Range(-tankSize, tankSize),
+                                 Random.Range(-tankSize * 3, tankSize * 3),
                                  Random.Range(-tankSize, tankSize));
         }
     }
