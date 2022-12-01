@@ -65784,6 +65784,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1159395574}
     m_Modifications:
+    - target: {fileID: 1571424952075606206, guid: 3e29fd212038116428cfdccb5d6ce87a,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera-Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571424952075606206, guid: 3e29fd212038116428cfdccb5d6ce87a,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCameraCharacter
+      objectReference: {fileID: 0}
     - target: {fileID: 1571424952369227168, guid: 3e29fd212038116428cfdccb5d6ce87a,
         type: 3}
       propertyPath: m_HapticHoverEnterDuration
@@ -65889,6 +65899,11 @@ PrefabInstance:
       propertyPath: m_ForwardSource
       value: 
       objectReference: {fileID: 377990294}
+    - target: {fileID: 1571424953691296867, guid: 3e29fd212038116428cfdccb5d6ce87a,
+        type: 3}
+      propertyPath: m_LeftHandMoveAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1571424953691296874, guid: 3e29fd212038116428cfdccb5d6ce87a,
         type: 3}
       propertyPath: m_RootOrder

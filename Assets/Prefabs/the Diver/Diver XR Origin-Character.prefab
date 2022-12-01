@@ -4640,7 +4640,7 @@ MonoBehaviour:
   jc_ind: 1
   minGyro: 0.2
   maxSpeed: 3
-  standardHapicSize: 0.3
+  standardHapticAmplitude: 0.3
   XROrigin: {fileID: 1571424953691296875}
   HeadPos: {fileID: 1571424952075606205}
   characterModle: {fileID: 5238180724791273830}
@@ -5887,6 +5887,8 @@ MonoBehaviour:
   SpeedDecayRotation: 0.25
   controllerCharacteristics: 320
   controllerVelocity: {x: 0, y: 0, z: 0}
+  standardHapticAmplitude: 0.2
+  hapticDuration: 0.2
   targetSpeed: 0.01
 --- !u!1 &1571424952575895233
 GameObject:
@@ -6351,6 +6353,8 @@ MonoBehaviour:
   SpeedDecayRotation: 0.25
   controllerCharacteristics: 576
   controllerVelocity: {x: 0, y: 0, z: 0}
+  standardHapticAmplitude: 0.2
+  hapticDuration: 0.2
   targetSpeed: 0.01
 --- !u!1 &1571424953086102045
 GameObject:
@@ -7395,7 +7399,7 @@ MonoBehaviour:
   jc_ind: 0
   minGyro: 0.2
   maxSpeed: 3
-  standardHapicSize: 0.3
+  standardHapticAmplitude: 0.3
   XROrigin: {fileID: 1571424953691296875}
   HeadPos: {fileID: 1571424952075606205}
   characterModle: {fileID: 5238180724791273830}
