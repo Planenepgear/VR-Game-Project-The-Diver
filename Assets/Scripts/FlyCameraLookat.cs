@@ -44,6 +44,9 @@ public class FlyCameraLookat : MonoBehaviour
     private bool isExchanging0 = false;
     private bool isExchanging1 = false;
     private bool isExchanging2 = false;
+    
+    public AudioClip[] switchAudio;
+    public AudioSource switchSFX;
 
     private void Start()
     {
@@ -119,6 +122,12 @@ public class FlyCameraLookat : MonoBehaviour
 
                 isWeekUp = false;
                 t = 0.0f;
+
+                switchSFX.clip = switchAudio[0];
+                if (!switchSFX.isPlaying)
+                {
+                    switchSFX.Play();
+                }
             }
             else if (isExchanging0 == false && flyCamera.parent == characterCamera.parent)
             {
@@ -151,6 +160,12 @@ public class FlyCameraLookat : MonoBehaviour
 
                 isWeekUp = false;
                 t = 0.0f;
+
+                switchSFX.clip = switchAudio[1];
+                if (!switchSFX.isPlaying)
+                {
+                    switchSFX.Play();
+                }
             }
         }
 
