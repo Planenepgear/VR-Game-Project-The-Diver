@@ -111,18 +111,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towards: {fileID: 4564997689914367051}
-  chapterModel: {fileID: 4564997689914367051}
-  turnSpeed: 20
-  LJoystick:
-    m_UseReference: 1
+  characterModle: {fileID: 0}
+  LMoveaction:
+    m_UseReference: 0
     m_Action:
-      m_Name: L Joystick
+      m_Name: L Moveaction
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 3cc20b85-f1a5-427e-973e-cfe043f97128
+      m_Id: db9639ea-fbbc-4f50-a8de-d9e94ded0606
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+    m_Reference: {fileID: 0}
+  turnSpeed: 20

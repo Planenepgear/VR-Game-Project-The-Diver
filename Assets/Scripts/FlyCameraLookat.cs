@@ -14,9 +14,11 @@ public class FlyCameraLookat : MonoBehaviour
     public Transform characterCamera; //1
     public Transform locator;
     public GameObject characterModle;
-    public GameObject chapterLeftHand;
-    public GameObject chapterRightHand;
-    public GameObject chapterLegs;
+
+    //public GameObject chapterLeftHand;
+    //public GameObject chapterRightHand;
+    //public GameObject chapterLegs;
+    public GameObject[] switchObjects;
 
     public GameObject globalVolume;
     public float weightChangeSpeed = 0.25f;
@@ -61,9 +63,13 @@ public class FlyCameraLookat : MonoBehaviour
         flyCamera.gameObject.SetActive(false);
         characterCamera.parent.parent.GetComponent<ActionBasedSnapTurnProvider>().enabled = false;
 
-        chapterLeftHand.SetActive(false);
-        chapterRightHand.SetActive(false);
-        chapterLegs.SetActive(false);
+        foreach(var item in switchObjects)
+        {
+            item.SetActive(false);
+        }
+        //chapterLeftHand.SetActive(false);
+        //chapterRightHand.SetActive(false);
+        //chapterLegs.SetActive(false);
 
         myVolume = globalVolume.GetComponent<Volume>();
         myVolume.weight = 1;
@@ -146,9 +152,15 @@ public class FlyCameraLookat : MonoBehaviour
                 playerCamera.parent.gameObject.SetActive(true);
                 flyCamera.position = characterCamera.position;
                 flyCamera.SetParent(playerCamera.parent);
-                chapterLeftHand.SetActive(false);
-                chapterRightHand.SetActive(false);
-                chapterLegs.SetActive(false);
+
+                foreach (var item in switchObjects)
+                {
+                    item.SetActive(false);
+                }
+                //chapterLeftHand.SetActive(false);
+                //chapterRightHand.SetActive(false);
+                //chapterLegs.SetActive(false);
+
                 characterCamera.gameObject.SetActive(false);
 
                 characterCamera.parent.parent.GetComponent<ActionBasedContinuousMoveProvider>().forwardSource = locator;
@@ -200,9 +212,14 @@ public class FlyCameraLookat : MonoBehaviour
                 characterModle.GetComponent<MeshRenderer>().enabled = false;
 
                 characterCamera.parent.parent.GetComponent<ActionBasedSnapTurnProvider>().enabled = true;
-                chapterLeftHand.SetActive(true);
-                chapterRightHand.SetActive(true);
-                chapterLegs.SetActive(true);
+
+                foreach (var item in switchObjects)
+                {
+                    item.SetActive(true);
+                }
+                //chapterLeftHand.SetActive(true);
+                //chapterRightHand.SetActive(true);
+                //chapterLegs.SetActive(true);
 
                 characterModle.SendMessage("FirstPerson", true);
             }
