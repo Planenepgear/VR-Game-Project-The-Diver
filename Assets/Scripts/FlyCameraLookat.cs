@@ -28,7 +28,7 @@ public class FlyCameraLookat : MonoBehaviour
     public float minDistance = 0.3f;
 
     //public float flySpeed = 1.0f;
-    public float flySmoothTime = 2.5F;
+    public float flySmoothTime = 2.5f;
     public float Yoffect = 0f;
     private Vector3 flyVelocity = Vector3.zero;
     private Vector3 centerPosWorld;
