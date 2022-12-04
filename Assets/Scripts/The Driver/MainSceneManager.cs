@@ -25,22 +25,27 @@ public class MainSceneManager : MonoBehaviour
         if (t < 1.0f && !isWeekUp)
         {
             t += Time.deltaTime * weightChangeSpeed;
-            myVolume.weight = Mathf.Lerp(0, 0.9f, t);
+            myVolume.weight = Mathf.Lerp(0, 1f, t);
         }
         else if (t > 0.06f && isWeekUp)
         {
             t -= Time.deltaTime * weightChangeSpeed;
-            myVolume.weight = Mathf.Lerp(0, 1, t);
+            myVolume.weight = Mathf.Lerp(0, 1f, t);
         }
 
         if (t > 1)
         {
-            SceneManager.LoadScene("1-Game Scene", LoadSceneMode.Single);
+            Invoke(nameof(GoNext), 1f);
         }
     }
 
     public void NextScene()
     {
         isWeekUp = false;
+    }
+
+    private void GoNext()
+    {
+        SceneManager.LoadScene("1-Game Scene", LoadSceneMode.Single);
     }
 }

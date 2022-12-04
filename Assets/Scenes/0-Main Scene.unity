@@ -999,7 +999,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Click to
 
-    Start Dive !'
+    Start Diving !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3403,9 +3403,7 @@ MonoBehaviour:
   characterCamera: {fileID: 0}
   locator: {fileID: 377990294}
   characterModle: {fileID: 0}
-  chapterLeftHand: {fileID: 0}
-  chapterRightHand: {fileID: 0}
-  chapterLegs: {fileID: 0}
+  switchObjects: []
   globalVolume: {fileID: 583673708}
   weightChangeSpeed: 0.8
   minDistance: 2
@@ -3467,6 +3465,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6cc8335091ef01343b02a187f351180f, type: 3}
   - {fileID: 8300000, guid: db0e6f60616e6df4e86810f0b9cb5f02, type: 3}
   switchSFX: {fileID: 0}
+  bgmPlayer: {fileID: 0}
 --- !u!114 &1773816614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4036,7 +4035,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 93.6}
+  m_SizeDelta: {x: 220, y: 93.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854866539
 MonoBehaviour:
@@ -5339,7 +5338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalVolume: {fileID: 583673708}
-  weightChangeSpeed: 0.8
+  weightChangeSpeed: 0.5
 --- !u!1 &992790944733480268
 GameObject:
   m_ObjectHideFlags: 0

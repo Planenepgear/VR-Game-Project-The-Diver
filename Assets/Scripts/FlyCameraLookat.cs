@@ -49,6 +49,7 @@ public class FlyCameraLookat : MonoBehaviour
     
     public AudioClip[] switchAudio;
     public AudioSource switchSFX;
+    public GameObject bgmPlayer;
 
     private void Start()
     {
@@ -65,7 +66,10 @@ public class FlyCameraLookat : MonoBehaviour
 
         foreach(var item in switchObjects)
         {
-            item.SetActive(false);
+            if (item)
+            {
+                item.SetActive(false);
+            }
         }
         //chapterLeftHand.SetActive(false);
         //chapterRightHand.SetActive(false);
@@ -73,8 +77,8 @@ public class FlyCameraLookat : MonoBehaviour
 
         myVolume = globalVolume.GetComponent<Volume>();
         myVolume.weight = 1;
-        isWeekUp = true;
         t = 1.0f;
+        Invoke(nameof(FirstWikeUp), 1f);
     }
 
     void Update()
@@ -129,11 +133,13 @@ public class FlyCameraLookat : MonoBehaviour
                 isWeekUp = false;
                 t = 0.0f;
 
+                bgmPlayer.SetActive(false);
                 switchSFX.clip = switchAudio[0];
-                if (!switchSFX.isPlaying)
-                {
-                    switchSFX.Play();
-                }
+                switchSFX.PlayOneShot(switchAudio[0]);
+                //if (!switchSFX.isPlaying)
+                //{
+                //    switchSFX.Play();
+                //}
             }
             else if (isExchanging0 == false && flyCamera.parent == characterCamera.parent)
             {
@@ -155,7 +161,10 @@ public class FlyCameraLookat : MonoBehaviour
 
                 foreach (var item in switchObjects)
                 {
-                    item.SetActive(false);
+                    if (item)
+                    {
+                        item.SetActive(false);
+                    }
                 }
                 //chapterLeftHand.SetActive(false);
                 //chapterRightHand.SetActive(false);
@@ -173,11 +182,13 @@ public class FlyCameraLookat : MonoBehaviour
                 isWeekUp = false;
                 t = 0.0f;
 
+                bgmPlayer.SetActive(false);
                 switchSFX.clip = switchAudio[1];
-                if (!switchSFX.isPlaying)
-                {
-                    switchSFX.Play();
-                }
+                switchSFX.PlayOneShot(switchAudio[1]);
+                //if (!switchSFX.isPlaying)
+                //{
+                //    switchSFX.Play();
+                //}
             }
         }
 
@@ -215,7 +226,10 @@ public class FlyCameraLookat : MonoBehaviour
 
                 foreach (var item in switchObjects)
                 {
-                    item.SetActive(true);
+                    if (item)
+                    {
+                        item.SetActive(true);
+                    }
                 }
                 //chapterLeftHand.SetActive(true);
                 //chapterRightHand.SetActive(true);
@@ -236,6 +250,8 @@ public class FlyCameraLookat : MonoBehaviour
 
             flyCamera.gameObject.SetActive(false);
             //Invoke(nameof(Wait), 0.5f);
+
+            bgmPlayer.SetActive(true);
         }
         else if (dis > minDistance)
         {
@@ -249,8 +265,8 @@ public class FlyCameraLookat : MonoBehaviour
         }
     }
 
-    //private void Wait()
-    //{
-    //    flyCamera.gameObject.SetActive(false);
-    //}
+    private void FirstWikeUp()
+    {
+        isWeekUp = true;
+    }
 }
