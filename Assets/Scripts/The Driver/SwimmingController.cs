@@ -37,7 +37,7 @@ public class SwimmingController : MonoBehaviour
 
     void TryInitialize()  // ≥¢ ‘≥ı ºªØ
     {
-        List<InputDevice> devices = new List<InputDevice>();
+        List<InputDevice> devices = new();
 
         InputDevices.GetDevicesWithCharacteristics(controllerCharacteristics, devices);
 
@@ -83,7 +83,7 @@ public class SwimmingController : MonoBehaviour
                 {
                     if (Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.x) && Mathf.Abs(controllerVelocity.z) * 2 > Mathf.Abs(controllerVelocity.y))
                     {
-                        rb.AddForce(HeadPos.forward * (-controllerVelocity.z + Mathf.Abs(controllerVelocity.x) * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.7f);
+                        rb.AddForce((-controllerVelocity.z + Mathf.Abs(controllerVelocity.x) * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.7f * HeadPos.forward);
                         Haptic(speed);
                     }
                 }
@@ -91,13 +91,13 @@ public class SwimmingController : MonoBehaviour
                 {
                     if(Mathf.Abs(controllerVelocity.y) > Mathf.Abs(controllerVelocity.z))
                     {
-                        rb.AddForce(HeadPos.forward * (-controllerVelocity.z * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.5f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.8f);
+                        rb.AddForce((-controllerVelocity.z * 0.3f + Mathf.Abs(controllerVelocity.x) * 0.5f + Mathf.Abs(controllerVelocity.x) * 0.2f) * 0.8f * HeadPos.forward);
                         Haptic(speed);
                     }
                 }
                 else if(gripButtonPressed && Mathf.Abs(controllerVelocity.x) < Mathf.Abs(controllerVelocity.y))
                 {
-                    rb.AddForce(this.transform.parent.parent.up * -controllerVelocity.y * 0.5f);
+                    rb.AddForce(0.5f * -controllerVelocity.y * transform.parent.parent.up);
                     Haptic(speed + 0.5f);
                 }
 

@@ -11,6 +11,8 @@ TagManager:
   - Elevator
   - Seesaw
   - MainCameraCharacter
+  - Bone
+  - Stone
   layers:
   - Default
   - TransparentFX
@@ -22,9 +24,9 @@ TagManager:
   - Character
   - Interactable P
   - Interactable C
-  - 
-  - 
-  - 
+  - Stone
+  - Bones
+  - Shell
   - 
   - 
   - 

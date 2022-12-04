@@ -33,11 +33,11 @@ public class Swimming3rd : MonoBehaviour
 
         if (LTrigger.action.ReadValue<float>() > 0.1f)
         {
-            rb.AddForce(transform.up * LMoveaction.action.ReadValue<Vector2>().sqrMagnitude * 1.25f);
+            rb.AddForce(1.25f * LMoveaction.action.ReadValue<Vector2>().sqrMagnitude * transform.up);
         }
         else if (RTrigger.action.ReadValue<float>() > 0.1f)
         {
-            rb.AddForce(-transform.up * LMoveaction.action.ReadValue<Vector2>().sqrMagnitude * 1.25f);
+            rb.AddForce(1.25f * LMoveaction.action.ReadValue<Vector2>().sqrMagnitude * -transform.up);
         }
 
         if (rb.velocity.sqrMagnitude > 0.001f)

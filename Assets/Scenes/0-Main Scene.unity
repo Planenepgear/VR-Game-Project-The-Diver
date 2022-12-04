@@ -3568,7 +3568,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773816612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
   m_Name: 
@@ -5705,7 +5705,7 @@ MonoBehaviour:
   _heightQueries: 1
   _forceBatchMode: 0
   _forceNoGPU: 0
-  _attachDebugGUI: 1
+  _attachDebugGUI: 0
   _hideOceanTileGameObjects: 1
   _uniformTiles: 0
   _disableSkirt: 0

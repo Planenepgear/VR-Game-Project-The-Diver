@@ -269,4 +269,9 @@ public class FlyCameraLookat : MonoBehaviour
     {
         isWeekUp = true;
     }
+
+    public void LastSleep()
+    {
+        isWeekUp = false;
+    }
 }
