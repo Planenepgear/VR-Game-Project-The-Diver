@@ -7,6 +7,8 @@ public class BoneDetection : MonoBehaviour
     public GameObject shell;
     public GameObject door;
     [SerializeField] private int boneNumber = 0;
+    [SerializeField] private int stoneNumber = 0;
+    private bool isLocked = true;
 
     private void Start()
     {
@@ -19,6 +21,11 @@ public class BoneDetection : MonoBehaviour
         {
             boneNumber += 1;
         }
+
+        if (collision.transform.CompareTag("Stone"))
+        {
+            stoneNumber++;
+        }
     }
 
 
@@ -26,11 +33,16 @@ public class BoneDetection : MonoBehaviour
     {
         if (collision.transform.CompareTag("Stone"))
         {
+            isLocked = true;
             shell.SetActive(true);
         }
         else
         {
-            shell.SetActive(false);
+            isLocked = false;
+            if (shell)
+            {
+                shell.SetActive(false);
+            }
         }
     }
 
@@ -40,10 +52,23 @@ public class BoneDetection : MonoBehaviour
         {
             boneNumber -= 1;
         }
+
+        if (collision.transform.CompareTag("Stone"))
+        {
+            stoneNumber--;
+        }
     }
 
     private void Update()
     {
+        if (stoneNumber <= 0 || !isLocked)
+        {
+            if (shell)
+            {
+                shell.SetActive(false);
+            }
+        }
+
         if(boneNumber >= 5)
         {
             door.SetActive(false);

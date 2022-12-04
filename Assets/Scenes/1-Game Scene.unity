@@ -4455,7 +4455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 145836964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -14585,7 +14585,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 329819465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -16058,7 +16058,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1001 &365026474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17772,17 +17772,17 @@ PrefabInstance:
     - target: {fileID: 2648455418547875872, guid: bb5554a58ea9a754b905015839429b2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3812013
+      value: 6.97
       objectReference: {fileID: 0}
     - target: {fileID: 2648455418547875872, guid: bb5554a58ea9a754b905015839429b2c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.91
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 2648455418547875872, guid: bb5554a58ea9a754b905015839429b2c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.2202682
+      value: -7.37
       objectReference: {fileID: 0}
     - target: {fileID: 2648455418547875872, guid: bb5554a58ea9a754b905015839429b2c,
         type: 3}
@@ -21925,7 +21925,7 @@ PrefabInstance:
     - target: {fileID: 2695910943513727318, guid: 01ea473f7907885459e014360d3044f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.309208
+      value: 8.98
       objectReference: {fileID: 0}
     - target: {fileID: 2695910943513727318, guid: 01ea473f7907885459e014360d3044f0,
         type: 3}
@@ -21935,7 +21935,7 @@ PrefabInstance:
     - target: {fileID: 2695910943513727318, guid: 01ea473f7907885459e014360d3044f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.1939654
+      value: -5.38
       objectReference: {fileID: 0}
     - target: {fileID: 2695910943513727318, guid: 01ea473f7907885459e014360d3044f0,
         type: 3}
@@ -25685,7 +25685,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 683834943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -31108,7 +31108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 841136219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -32388,7 +32388,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 888421334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -33414,7 +33414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 910249167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -34243,17 +34243,17 @@ PrefabInstance:
     - target: {fileID: 7309329678267323193, guid: b10bce2902c85744582b120603a10102,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.17
+      value: 8.82
       objectReference: {fileID: 0}
     - target: {fileID: 7309329678267323193, guid: b10bce2902c85744582b120603a10102,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.3249
+      value: 8.2
       objectReference: {fileID: 0}
     - target: {fileID: 7309329678267323193, guid: b10bce2902c85744582b120603a10102,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.500002
+      value: -8.7
       objectReference: {fileID: 0}
     - target: {fileID: 7309329678267323193, guid: b10bce2902c85744582b120603a10102,
         type: 3}
@@ -36943,7 +36943,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043200828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -41062,7 +41062,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195203782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -45010,7 +45010,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297299202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -45264,7 +45264,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1302589590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -52137,17 +52137,17 @@ PrefabInstance:
     - target: {fileID: 8013925950530509719, guid: da547ece69e61f243acf8e2997473cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.11
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 8013925950530509719, guid: da547ece69e61f243acf8e2997473cc1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.7333
+      value: 8.26
       objectReference: {fileID: 0}
     - target: {fileID: 8013925950530509719, guid: da547ece69e61f243acf8e2997473cc1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.580002
+      value: -7.88
       objectReference: {fileID: 0}
     - target: {fileID: 8013925950530509719, guid: da547ece69e61f243acf8e2997473cc1,
         type: 3}
@@ -67189,7 +67189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1995282923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121859e2ad98b4644b7e32fbf127e132, type: 3}
+  m_Script: {fileID: 11500000, guid: 877070b56a68d9d45a1e8f54f209585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
